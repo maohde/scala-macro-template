@@ -1,5 +1,10 @@
 object Main extends App {
-  import Macros._
 
-  println("it works!")
+  @fieldNames
+  case class Person(name: String, age: Int)
+
+  @fieldNames
+  class Address(street: List[String])
+
+  println(s"${Person.name} ${Person.age} ${Address.street}")
 }
